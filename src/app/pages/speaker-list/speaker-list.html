@@ -3,50 +3,124 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Speakers</ion-title>
+
+    <ion-title>그룹</ion-title>
+    <ion-buttons slot="end" style="margin-right: 10px;">
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Speakers</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-searchbar
+    showCancelButton="focus"
+    placeholder="그룹을 검색하세요."
+  ></ion-searchbar>
 
-  <ion-grid fixed>
-    <ion-row>
-      <ion-col size="12" size-md="6" *ngFor="let speaker of speakers">
-        <ion-card class="speaker-card">
-          <ion-card-header>
-            <ion-item detail="false" lines="none" class="speaker-item" routerLink="/app/tabs/speakers/speaker-details/{{speaker.id}}">
-              <ion-avatar slot="start">
-                <img [src]="speaker.profilePic" [alt]="speaker.name + ' profile picture'">
-              </ion-avatar>
-              <ion-label>
-                <h2>{{speaker.name}}</h2>
-                <p>{{speaker.title}}</p>
-              </ion-label>
-            </ion-item>
-          </ion-card-header>
+  <ion-card>
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label>
+            <strong>주제별 그룹 찾기</strong>
+          </ion-label>
+        </ion-item>
 
-          <ion-card-content>
-            <ion-list lines="none">
-              <ion-item *ngFor="let session of speaker.sessions" detail="false" routerLink="/app/tabs/speakers/session/{{session.id}}">
-                <ion-label>
-                  <h3>{{session.name}}</h3>
-                </ion-label>
-              </ion-item>
+        <div>
+          <ion-grid slot>
+            <ion-row>
+              <ion-col>
+                <img src="../../../assets/img/g1.jpg" />
+                <p>지역</p>
+              </ion-col>
+              <ion-col>
+                <img src="../../../assets/img/g2.jpg" />
+                <p>학교/회사</p>
+              </ion-col>
+              <ion-col>
+                <img src="../../../assets/img/g3.jpg" />
+                <p>취미</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <p>
+        그룹을 만들고 같은 지역, 학교 취미를 가진 사람들과 물건을 판매해 보세요.
+      </p>
+      <ion-toolbar>
+        <ion-button slot="start" color="danger" fill="clear">
+          그룹만들기
+        </ion-button>
+      </ion-toolbar>
+    </ion-card-content>
+  </ion-card>
 
-              <ion-item detail="false" routerLink="/app/tabs/speakers/speaker-details/{{speaker.id}}">
-                <ion-label>
-                  <h3>About {{speaker.name}}</h3>
-                </ion-label>
-              </ion-item>
-            </ion-list>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-card>
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label>
+            <strong>새로 시작한 그룹</strong>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="assets/woman-1.jpeg" />
+          </ion-avatar>
+          <ion-label>
+            <h2>Awesome Person</h2>
+            <p>멤버 1 | 상품수 1</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-avatar slot="start">
+            <img
+              src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
+            />
+          </ion-avatar>
+          <ion-label>
+            <h2>2020년 새로운 사람들</h2>
+            <p>멤버 2 | 상품수 1</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label>
+            <strong>인기 그룹</strong>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="assets/high-wire.jpg" />
+          </ion-avatar>
+          <ion-label>
+            <h2>부산지역모임</h2>
+            <p>멤버 31 | 상품수 11</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="../../../assets/ddd.jpeg">
+          </ion-avatar>
+          <ion-label>
+            <h2>산악회</h2>
+            <p>멤버 22 | 상품수 17</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

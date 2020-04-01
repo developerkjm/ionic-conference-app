@@ -3,44 +3,93 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Signup</ion-title>
+
+    <ion-title>패션잡화</ion-title>
+    <ion-buttons slot="end" style="margin-right: 10px;">
+      <ion-icon name="search-outline"></ion-icon>&nbsp;&nbsp;
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-  <div class="signup-logo">
-    <img src="assets/img/appicon.svg" alt="Ionic Logo">
-  </div>
-
-  <form #signupForm="ngForm" novalidate>
-    <ion-list lines="none">
-      <ion-item>
-        <ion-label position="stacked" color="primary">Username</ion-label>
-        <ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" required>
-        </ion-input>
-      </ion-item>
-      <ion-text color="danger">
-        <p [hidden]="username.valid || submitted == false" class="ion-padding-start">
-          Username is required
-        </p>
-      </ion-text>
-
-      <ion-item>
-        <ion-label position="stacked" color="primary">Password</ion-label>
-        <ion-input [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" required>
-        </ion-input>
-      </ion-item>
-      <ion-text color="danger">
-        <p [hidden]="password.valid || submitted == false" class="ion-padding-start">
-          Password is required
-        </p>
-      </ion-text>
-    </ion-list>
-
-    <div class="ion-padding">
-      <ion-button (click)="onSignup(signupForm)" type="submit" expand="block">Create</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        전체보기<span>1,695</span>
+      </ion-col>
+      <ion-col>
+        색조메이크업<span>221</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>스킨케어 154</ion-col>
+      <ion-col>베이스메이크업 125</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>이미용품 154</ion-col>
+      <ion-col>향수 114</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>헤어/바디 125</ion-col>
+      <ion-col>네일아트/케어 98</ion-col>
+    </ion-row>
+    <details>
+      <ion-row>
+        <ion-col>다이어트/이색뷰티 154</ion-col>
+        <ion-col>썬케어 125</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>남성화장품 154</ion-col>
+        <ion-col></ion-col>
+      </ion-row>      
+    </details>
+  </ion-grid>
+  <div style="background-color: #c4c4c4; height: 30px; display:flex; justify-content:center; align-items:center;">
+    <div style="margin-left: 10px;">
+      오늘의 추천상품
     </div>
-  </form>
-
+  </div>
+  <div>
+    <ion-grid slot>
+      <ion-row>
+        <ion-col>
+          <img src="../../../assets/img/bt1.jpeg" />
+          <h5>5,000원</h5>
+          <p><small>네일아트제품균일가</small></p>
+        </ion-col>
+        <ion-col>
+          <img src="../../../assets/img/bt2.jpeg" />
+          <h5>132,000원</h5>
+          <p><small>여성향수</small></p>
+        </ion-col>
+        <ion-col>
+          <img src="../../../assets/img/bt3.jpeg" />
+          <h5>36,900원</h5>
+          <p><small>립스틱균일가</small></p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div>
+    <ion-grid slot>
+      <ion-row>
+        <ion-col>
+          <img src="../../../assets/img/bt4.jpeg" />
+          <h5>1,000원</h5>
+          <p><small>물방울퍼프</small></p>
+        </ion-col>
+        <ion-col>
+          <img src="../../../assets/img/bt5.jpeg" />
+          <h5>10,000원 ~</h5>
+          <p><small>미용제품</small></p>
+        </ion-col>
+        <ion-col>
+          <img src="../../../assets/img/bt6.jpeg" />
+          <h5>55,000원</h5>
+          <p><small>미용가위</small></p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

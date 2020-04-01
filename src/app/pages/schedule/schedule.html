@@ -1,104 +1,101 @@
-<ion-header translucent="true">
+<ion-header>
   <ion-toolbar>
-    <ion-buttons *ngIf="!showSearchbar" slot="start">
+    <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-segment *ngIf="ios" [(ngModel)]="segment" (ionChange)="updateSchedule()">
-      <ion-segment-button value="all">
-        All
-      </ion-segment-button>
-      <ion-segment-button value="favorites">
-        Favorites
-      </ion-segment-button>
-    </ion-segment>
-    <ion-title *ngIf="!ios && !showSearchbar">Schedule</ion-title>
-    <ion-searchbar *ngIf="showSearchbar" showCancelButton="always" [(ngModel)]="queryText" (ionChange)="updateSchedule()" (ionCancel)="showSearchbar = false" placeholder="Search"></ion-searchbar>
-    <ion-buttons slot="end">
-      <ion-button *ngIf="!ios && !showSearchbar" (click)="showSearchbar = true">
-        <ion-icon slot="icon-only" name="search"></ion-icon>
-      </ion-button>
-      <ion-button *ngIf="!showSearchbar" (click)="presentFilter()">
-        <span *ngIf="ios">Filter</span>
-        <span *ngIf="!ios">
-          <ion-icon slot="icon-only" name="options"></ion-icon>
-        </span>
-      </ion-button>
+
+    <ion-title>대청동</ion-title>
+    <ion-buttons slot="end" style="margin-right: 10px;">
+      <ion-icon name="search-outline"></ion-icon>
     </ion-buttons>
-  </ion-toolbar>
-  <ion-toolbar *ngIf="!ios">
-    <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
-      <ion-segment-button value="all">
-        All
-      </ion-segment-button>
-      <ion-segment-button value="favorites">
-        Favorites
-      </ion-segment-button>
-    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Schedule</ion-title>
-    </ion-toolbar>
-    <ion-toolbar>
-      <ion-searchbar [(ngModel)]="queryText" (ionChange)="updateSchedule()" placeholder="Search"></ion-searchbar>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-list #scheduleList [hidden]="shownSessions === 0">
-    <ion-item-group *ngFor="let group of groups" [hidden]="group.hide">
-      <ion-item-divider sticky>
-        <ion-label>
-          {{group.time}}
-        </ion-label>
-      </ion-item-divider>
-
-      <ion-item-sliding *ngFor="let session of group.sessions" #slidingItem [attr.track]="session.tracks[0] | lowercase"
-        [hidden]="session.hide">
-        <ion-item routerLink="/app/tabs/schedule/session/{{session.id}}">
-          <ion-label>
-            <h3>{{session.name}}</h3>
-            <p>
-              {{session.timeStart}} &mdash; {{session.timeEnd}}: {{session.location}}
-            </p>
-          </ion-label>
-        </ion-item>
-        <ion-item-options>
-          <ion-item-option color="favorite" (click)="addFavorite(slidingItem, session)" *ngIf="segment === 'all'">
-            Favorite
-          </ion-item-option>
-          <ion-item-option color="danger" (click)="removeFavorite(slidingItem, session, 'Remove Favorite')"
-            *ngIf="segment === 'favorites'">
-            Remove
-          </ion-item-option>
-        </ion-item-options>
-      </ion-item-sliding>
-    </ion-item-group>
+<ion-content>
+  <ion-chip color="primary">
+    <ion-label>카테고리</ion-label>
+  </ion-chip>
+  <ion-chip color="primary">
+    <ion-label>가격</ion-label>
+  </ion-chip>
+  <ion-chip color="primary">
+    <ion-label>상품상태</ion-label>
+  </ion-chip>
+  <ion-chip color="primary">
+    <ion-label>상점유형</ion-label>
+  </ion-chip>
+  <ion-list>
+    <ion-item style="background-color: #9d9fa6;">
+      <ion-label>우리동네 키워드 알림 받기</ion-label>
+      <ion-toggle></ion-toggle>
+    </ion-item>
   </ion-list>
-
-  <ion-list-header [hidden]="shownSessions > 0">
-    No Sessions Found
-  </ion-list-header>
-
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end" #fab>
-    <ion-fab-button>
-      <ion-icon name="share-social"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button color="vimeo" (click)="openSocial('Vimeo', fab)">
-        <ion-icon name="logo-vimeo"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button color="instagram" (click)="openSocial('Instagram', fab)">
-        <ion-icon name="logo-instagram"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button color="twitter" (click)="openSocial('Twitter', fab)">
-        <ion-icon name="logo-twitter"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button color="facebook" (click)="openSocial('Facebook', fab)">
-        <ion-icon name="logo-facebook"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
+  <ion-list>
+    <ion-item style="background-color: #9d9fa6;">
+      <ion-label>20,625개</ion-label>
+      <ion-select value="brown" ok-text="Okay" cancel-text="Dismiss" slot>
+        <ion-select-option value="brown">최신순</ion-select-option>
+        <ion-select-option value="blonde">인기순</ion-select-option>
+        <ion-select-option value="black">저가순</ion-select-option>
+        <ion-select-option value="red">고가순</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="assets/album-1.jpeg" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Hit Single</h2>
+        <p>New Album</p>
+        <p>Awesome Artist</p>
+      </ion-label>
+      <ion-button slot="end" fill="clear">
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="../../../assets/img/p1.jpeg" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>19,900</h2>
+        <p>원피스</p>        
+      </ion-label>
+      <ion-button slot="end" fill="clear">
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="../../../assets/img/p2.jpeg" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>15,000</h2>
+        <p>레고시티시리즈</p>
+      </ion-label>
+      <ion-button slot="end" fill="clear">
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="../../../assets/img/p3.jpeg" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>5,000</h2>
+        <p>New socks</p>
+      </ion-label>
+      <ion-button slot="end" fill="clear">
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>

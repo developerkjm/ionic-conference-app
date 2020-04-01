@@ -3,32 +3,97 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Support</ion-title>
-  </ion-toolbar>
 
+    <ion-title>남성의류</ion-title>
+    <ion-buttons slot="end" style="margin-right: 10px;">
+      <ion-icon name="search-outline"></ion-icon>&nbsp;&nbsp;
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="support-logo">
-    <img src="assets/img/appicon.svg" alt="Ionic Logo">
-  </div>
-
-  <form #submitForm="ngForm" novalidate (ngSubmit)="submit(submitForm)">
-    <ion-list lines="none">
-      <ion-item>
-        <ion-label position="stacked" color="primary">Enter your support message below</ion-label>
-        <ion-textarea [(ngModel)]="supportMessage" name="supportQuestion" #supportQuestion="ngModel" rows="6" required></ion-textarea>
-      </ion-item>
-    </ion-list>
-
-    <ion-text color="danger">
-      <p [hidden]="supportQuestion.valid || submitted === false" class="ion-padding-start">
-        Support message is required
-      </p>
-    </ion-text>
-
-    <div class="ion-padding">
-      <ion-button expand="block" type="submit">Submit</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        전체보기<span>1,695</span>
+      </ion-col>
+      <ion-col>
+        점퍼/야상/패딩<span>221</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>맨투맨/후드티 154</ion-col>
+      <ion-col>가디건 125</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>반팔티셔츠 154</ion-col>
+      <ion-col>자켓 114</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>셔츠/남방 125</ion-col>
+      <ion-col>트레이닝 98</ion-col>
+    </ion-row>
+    <details>
+      <ion-row>
+        <ion-col>니트/스웨터 154</ion-col>
+        <ion-col>청바지 125</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>면/캐주얼바지 154</ion-col>
+        <ion-col>긴팔티셔츠 114</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>코트 125</ion-col>
+        <ion-col>반바지 98</ion-col>
+      </ion-row>
+    </details>
+  </ion-grid>
+  <div style="background-color: #c4c4c4; height: 30px; display:flex; justify-content:center; align-items:center;">
+    <div style="margin-left: 10px;">
+      오늘의 추천상품
     </div>
-  </form>
+  </div>
+  <div>
+    <ion-grid slot>
+      <ion-row>
+        <ion-col>
+          <img src="../../../assets/img/m1.jpeg" />
+          <h5>425,400원</h5>
+          <p><small>집업포인트라이더자켓</small></p>
+        </ion-col>
+        <ion-col>
+          <img src="../../../assets/img/m2.jpeg" />
+          <h5>132,000원</h5>
+          <p><small>아디제로니트자켓</small></p>
+        </ion-col>
+        <ion-col>
+          <img src="../../../assets/img/m3.jpeg" />
+          <h5>36,900원</h5>
+          <p><small>남성카라긴팔티셔츠</small></p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div>
+    <ion-grid slot>
+      <ion-row>
+        <ion-col>
+          <img src="../../../assets/img/m4.jpeg" />
+          <h5>46,000원</h5>
+          <p><small>워싱청바지</small></p>
+        </ion-col>
+        <ion-col>
+          <img src="../../../assets/img/m5.jpeg" />
+          <h5>10,000원</h5>
+          <p><small>남성카라반팔티셔츠</small></p>
+        </ion-col>
+        <ion-col>
+          <img src="../../../assets/img/m6.jpeg" />
+          <h5>55,000원</h5>
+          <p><small>셔츠</small></p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

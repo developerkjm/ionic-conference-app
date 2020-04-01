@@ -4,51 +4,98 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
-    <ion-title>Login</ion-title>
+    <ion-title>여성의류</ion-title>
+    <ion-buttons slot="end" style="margin-right: 10px;">
+      <ion-icon name="search-outline"></ion-icon>&nbsp;&nbsp;
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="login-logo">
-    <img src="assets/img/appicon.svg" alt="Ionic logo">
-  </div>
-
-  <form #loginForm="ngForm" novalidate>
-    <ion-list>
-      <ion-item>
-        <ion-label position="stacked" color="primary">Username</ion-label>
-        <ion-input [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
-          required>
-        </ion-input>
-      </ion-item>
-
-      <ion-text color="danger">
-        <p [hidden]="username.valid || submitted == false" class="ion-padding-start">
-          Username is required
-        </p>
-      </ion-text>
-
-      <ion-item>
-        <ion-label position="stacked" color="primary">Password</ion-label>
-        <ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required>
-        </ion-input>
-      </ion-item>
-
-      <ion-text color="danger">
-        <p [hidden]="password.valid || submitted == false" class="ion-padding-start">
-          Password is required
-        </p>
-      </ion-text>
-    </ion-list>
-
+  <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-button (click)="onLogin(loginForm)" type="submit" expand="block">Login</ion-button>
+        전체보기
+        <span>1,695</span>
       </ion-col>
       <ion-col>
-        <ion-button (click)="onSignup()" color="light" expand="block">Signup</ion-button>
+        원피스
+        <span>221</span>
       </ion-col>
     </ion-row>
-  </form>
-
+    <ion-row>
+      <ion-col>스커트 154</ion-col>
+      <ion-col>자켓 125</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>점퍼/패딩 154</ion-col>
+      <ion-col>니트/스웨터 114</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>블라우스 125</ion-col>
+      <ion-col>코트 98</ion-col>
+    </ion-row>
+    <details>
+      <ion-row>
+        <ion-col>맨투맨/후드티 154</ion-col>
+        <ion-col>티셔츠 125</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>가디건 154</ion-col>
+        <ion-col>청바지/스키니 114</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>셔츠 125</ion-col>
+        <ion-col>면/캐주얼 바지 98</ion-col>
+      </ion-row>
+    </details>
+  </ion-grid>
+  <div style="background-color: #c4c4c4; height: 30px; display:flex; justify-content:center; align-items:center;">
+    <div style="margin-left: 10px;">
+      오늘의 추천상품
+    </div>
+  </div>
+  <div>
+    <ion-grid slot>
+      <ion-row>
+        <ion-col>
+          <img src="../../../assets/img/w1.jpeg" />
+          <h5>25,400원</h5>
+          <p><small>259 볼륨블라우스</small></p>
+        </ion-col>
+        <ion-col>
+          <img src="../../../assets/img/w2.jpeg" />
+          <h5>32,000원</h5>
+          <p><small></small>리조 블라우스</p>
+        </ion-col>
+        <ion-col>
+          <img src="../../../assets/img/w3.jpeg" />
+          <h5>36,900원</h5>
+          <p><small></small>유니크숏커브 크롭후드티</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div>
+    <ion-grid slot>
+      <ion-row>
+        <ion-col>
+          <img src="../../../assets/img/w4.jpeg" />
+          <h5>46,000원</h5>
+          <p><small>여성의류 플레어스커트</small></p>
+        </ion-col>
+        <ion-col>
+          <img src="../../../assets/img/w5.jpeg" />
+          <h5>10,000원</h5>
+          <p>면 반팔 티셔츠</p>
+        </ion-col>
+        <ion-col>
+          <img src="../../../assets/img/w6.jpeg" />
+          <h5>55,000원</h5>
+          <p>설레임꽃셔츠블라우스</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
