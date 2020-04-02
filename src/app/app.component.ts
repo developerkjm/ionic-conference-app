@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
       icon: 'people'
     },
     {
-      title: '이벤트',
+      title: '지도',
       url: '/app/tabs/map',
       icon: 'flash'
     },

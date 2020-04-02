@@ -3,14 +3,20 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Account</ion-title>
+    <ion-title>내상점</ion-title>
+    <img
+      src="https://www.gravatar.com/avatar?d=mm&s=30"
+      alt="avatar"
+      slot="end"
+      style="margin-right: 10px;"
+    />
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div *ngIf="username" class="ion-padding-top ion-text-center">
-    <img src="https://www.gravatar.com/avatar?d=mm&s=140" alt="avatar">
-    <h2>{{username}}</h2>
+  <!-- <div *ngIf="username" class="ion-padding-top ion-text-center">
+    <img src="https://www.gravatar.com/avatar?d=mm&s=140" alt="avatar" />
+    <h2>{{ username }}</h2>
 
     <ion-list inset>
       <ion-item (click)="updatePicture()">Update Picture</ion-item>
@@ -19,5 +25,40 @@
       <ion-item (click)="support()">Support</ion-item>
       <ion-item (click)="logout()">Logout</ion-item>
     </ion-list>
+  </div> -->
+  <div class="ion-padding-top ion-text-center"></div>
+  <img src="https://www.gravatar.com/avatar?d=mm&s=140" alt="avatar" />
+
+  <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          0
+          <br />
+          상품
+        </ion-col>
+        <ion-col>
+          0
+          <br />
+          후기
+        </ion-col>
+        <ion-col>
+          0
+          <br />
+          찜
+        </ion-col>
+        <ion-col>
+          0
+          <br />
+          팔로워
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div style="background-color: #c4c4c4; height: 30px;">
+    <div style="margin-left: 10px;">
+      알림
+    </div>
   </div>
 </ion-content>

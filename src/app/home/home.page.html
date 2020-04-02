@@ -1,0 +1,162 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>HOME</ion-title>
+    <ion-buttons slot="end" style="margin-right: 10px;">
+      
+        <ion-icon name="search-outline"></ion-icon>
+
+
+      
+      <ion-button class="navyBtn" onClick="location.href='account'">
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-button>  
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>무엇을 찾고 계신가요??</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-searchbar showCancelButton="focus" placeholder="검색어를 입력해 보세요."></ion-searchbar>
+      <ion-list slot>
+        <ion-item>
+          <ion-chip color="primary" slot="start">
+            <ion-label>실시간인기</ion-label>
+          </ion-chip>
+          <ion-label>1. 실시간인기검색어</ion-label>
+          <ion-select value="brown" ok-text="Okay" cancel-text="Dismiss">
+            <ion-select-option value="brown"></ion-select-option>
+            <ion-select-option value="blonde"></ion-select-option>
+            <ion-select-option value="black"></ion-select-option>
+            <ion-select-option value="red"></ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label>
+            <strong>당신을 위해 준비했어요.</strong>
+          </ion-label>
+        </ion-item>
+
+        <div>
+          <ion-grid slot>
+            <ion-row>
+              <ion-col>
+                <img src="../../../assets/img/g1.jpg" />
+                <p>바로판매</p>
+              </ion-col>
+              <ion-col>
+                <img src="../../../assets/img/g3.jpg" />
+                <p>최근본상품</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-list>
+
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label>
+            <strong>추천 카테고리</strong>
+          </ion-label>
+        </ion-item>
+
+        <div>
+          <ion-grid slot>
+            <ion-row>
+              <ion-col>
+                <ion-icon name="bandage-outline">의약품</ion-icon>
+                <small>의약품</small>
+              </ion-col>
+              <ion-col>
+                <ion-icon name="bicycle-outline">자전거</ion-icon>
+                <small>자전거</small>
+              </ion-col>
+              <ion-col>
+                <ion-icon name="basketball-outline">포츠용품</ion-icon>
+                <small>스포츠</small>
+              </ion-col>
+              <ion-col>
+                <ion-icon name="bed-outline">가구</ion-icon>
+                <small>가구</small>
+              </ion-col>
+              <ion-col>
+                <ion-icon name="camera-outline">카메라</ion-icon>
+                <small>카메라</small>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-list lines="none">
+      <ion-item>
+        <ion-label>
+          <strong>우리동네 설정</strong>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+      <ion-list lines="none">
+        <ion-card-content>
+          <ion-button slot="start" color="primary" fill="outline" style="margin: auto 0px;">
+            <ion-icon name="add"></ion-icon>
+            지역추가하기
+          </ion-button>
+          <p>
+            <small>
+              거래 선호 지역을 추가하고 가까운 이웃들과 직거래를 해보세요!
+            </small>
+          </p>
+        </ion-card-content>
+      </ion-list>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label>
+            <strong>추천상품</strong>
+          </ion-label>
+        </ion-item>
+      
+
+        <div>
+          <ion-grid slot>
+            <ion-row>
+              <ion-col>
+                <img src="../../../assets/img/w1.jpeg" />
+                <p>15,000원</p>
+              </ion-col>
+              <ion-col>
+                <img src="../../../assets/img/m3.jpeg" />
+                <p>25,000원</p>
+              </ion-col>
+              <ion-col>
+                <img src="../../../assets/img/f3.jpeg" />
+                <p>30,000원</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-list>
+    </ion-card-content>
+
+     
+  </ion-card>
+
+</ion-content>

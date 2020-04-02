@@ -5,7 +5,7 @@ import { CheckTutorial } from './providers/check-tutorial.service';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/tutorial',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {
@@ -44,6 +44,18 @@ const routes: Routes = [
   {
     path: 'car',
     loadChildren: () => import('./car/car.module').then( m => m.CarPageModule)
+  },
+  {
+    path: 'fashion',
+    loadChildren: () => import('./fashion/fashion.module').then( m => m.FashionPageModule)
+  },
+  {
+    path: 'women',
+    loadChildren: () => import('./women/women.module').then( m => m.WomenPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   }
 ]; 
 
