@@ -85,7 +85,7 @@
           </ion-menu-toggle>
 
           <ion-menu-toggle autoHide="false">
-            <ion-item routerLink="/signup" routerLinkActive="active" routerDirection="root" detail="false">
+            <ion-item routerLink="/car" routerLinkActive="active" routerDirection="root" detail="false">
               <ion-icon slot="start" name="person-add"></ion-icon>
               <ion-label>
                 중고차/오토바이
@@ -107,17 +107,21 @@
             생활거래
           </ion-list-header>
           <ion-menu-toggle autoHide="false">
-            <ion-item button (click)="openTutorial()" detail="false">
-              <ion-icon slot="start" name="hammer"></ion-icon>
-              <ion-label>부동산</ion-label>
-            </ion-item>            
+            <ion-item routerLink="/real-property" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="person-add"></ion-icon>
+              <ion-label>
+                부동산
+              </ion-label>
+            </ion-item>
           </ion-menu-toggle>
 
           <ion-menu-toggle autoHide="false">
-            <ion-item button (click)="openTutorial()" detail="false">
-              <ion-icon slot="start" name="hammer"></ion-icon>
-              <ion-label>농산물직거래</ion-label>
-            </ion-item>            
+            <ion-item routerLink="/food" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="person-add"></ion-icon>
+              <ion-label>
+                농수산물 직거래
+              </ion-label>
+            </ion-item>
           </ion-menu-toggle>
 
         </ion-list>

@@ -40,8 +40,12 @@ const routes: Routes = [
   {
     path: 'food',
     loadChildren: () => import('./food/food.module').then( m => m.FoodPageModule)
+  },
+  {
+    path: 'car',
+    loadChildren: () => import('./car/car.module').then( m => m.CarPageModule)
   }
-];
+]; 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
